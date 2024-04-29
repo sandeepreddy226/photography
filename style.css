@@ -1,0 +1,196 @@
+
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: transparent; 
+    
+}
+
+.navbar-brand {
+    color: #fff !important; 
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important; 
+}
+
+.carousel-item {
+    height: 100vh;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%; 
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 80%;
+    text-align: left; 
+}
+
+
+.carousel-caption h1 {
+    font-size: 50px; 
+    
+    line-height: 1.5; 
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.carousel-caption a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #262626;
+    color: #fff; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 20px; 
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px; 
+  box-sizing: border-box; 
+}
+
+.slider-nav-btn {
+  background-color: rgba(0, 0, 0, 0);
+  color: white; 
+  font-size: 24px; 
+  width: 40px; 
+  height: 40px; 
+  border: none;
+  border-radius: 50%; 
+  cursor: pointer;
+}
+
+.slider-nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+ /* Custom CSS if needed */
+    .testimonial-content {
+      padding: 20px;
+      height: 100vh; /* Set height to 100% of viewport height */
+    }
+
+    .testimonial-image {
+      height: 100vh; /* Set height to 100% of viewport height */
+      position: relative; /* Position the image container */
+    }
+
+    .testimonial-image img {
+      height: 100%; /* Ensure the image fills the entire height of its container */
+      width: auto; /* Ensure the image width adjusts automatically */
+      object-fit: cover; /* Maintain aspect ratio and cover container */
+    }
+
+    .carousel-item {
+      height: 100vh; /* Set height to 100% of viewport height */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: absolute; /* Position the arrow controls */
+      top: 50%; /* Center vertically */
+      transform: translateY(-50%); /* Adjust vertical position */
+      color: #fff; /* Set arrow color */
+      background-color: rgba(0, 0, 0, 0); /* Set arrow background color */
+      padding: 10px; /* Add padding */
+      border: none; /* Remove border */
+      cursor: pointer; /* Add cursor pointer */
+      z-index: 1; /* Ensure buttons are above image */
+    }
+
+    .carousel-control-prev {
+      left: 10px; /* Position the previous arrow on the left side */
+    }
+
+    .carousel-control-next {
+      right: 10px; /* Position the next arrow on the right side */
+    }
+
+    /* Hide default carousel controls */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      display: none;
+    }
+
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    text-align: center;
+  }
+/*section 5*/
+
+.container2
+{
+width:100%;
+height:600px;
+margin-top:50px;
+
+} 
+.imgbox
+{
+width:400px;
+height:450px;
+margin-left:200px;
+margin-top:100px;
+box-shadow:-30px 10px #DEF2EF;
+margin-top:30px;
+} 
+.imgtxt
+{
+margin-left:150px;
+margin-right:200px;
+}
+@media screen and (max-width: 500px) {
+  .imgbox{
+    width:100px;
+margin-left:0px;
+  }
+  .imgtxt
+  {
+   margin-left:-45px;
+   margin-right:0px;
+}
+}   
+@media screen and (max-width: 1200px) {
+  .imgbox{
+    width:300px;
+margin-left:0px;
+  }
+  .imgtxt
+  {
+   margin-left:100px;
+   margin-right:0px;
+}
+}   
+
+/* section 6 */                                         
+.button1
+{
+width:100px;
+height:40px;
+color:white;
+background-color:black;
+margin-top:70px;
+}
+
+.testimg
+{
+width:700px;
+height:400px;
+}
