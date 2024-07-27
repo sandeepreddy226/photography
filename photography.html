@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }*
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+
+/* Header Styles */
+.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+.navbar-brand {
+  font-family: 'Merienda', cursive;
+  font-size: 24px;
+  color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Merienda', cursive;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+/* Carousel Styles */
+.carousel-item {
+  width: 100vw;
+  height: 100vh;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 80%;
+  text-align: left;
+}
+
+.carousel-caption h1 {
+  font-size: 50px;
+  line-height: 1.5;
+  text-align: left;
+  font-family: sans-serif;
+}
+
+.carousel-caption a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #262626;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/*testimonial section*/
+
+
+.testimonial-section .slider-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.testimonial-section .slider-half {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* Add margin at the bottom for a gap between sliders */
+}
+
+.testimonial-section .slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.testimonial-section .slider-controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.testimonial-section .slider-controls button:focus {
+  outline: none;
+}
+
+.testimonial-section .text-slider,
+.testimonial-section .image-slider {
+  height: 400px; /* Increased height for sliders */
+  overflow: hidden; /* Hide overflowing content */
+  position: relative; /* Position relative for absolute positioning of arrow buttons */
+  border: 2px solid #ccc; /* Add border */
+  box-sizing: border-box; /* Include padding and border in the total width and height */
+}
+
+.testimonial-section .slide {
+  display: none;
+}
+
+.testimonial-section .slide-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.testimonial-section .slide-desc {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.testimonial-section .slide-image {
+  width: 100%;
+  height: 100%; /* Fill the container height */
+  object-fit: cover; /* Ensure images cover the container */
+}
+
+.testimonial-section .prev, .testimonial-section .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.testimonial-section .prev {
+  left: 10px;
+}
+
+.testimonial-section .next {
+  right: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .testimonial-section .slider-half {
+    width: 100%; /* Make both sliders take up full width on screens less than 768px */
+    margin-bottom: 20px; /* Add margin at the bottom for a gap between sliders */
+  }
+
+  .testimonial-section .image-slider, .testimonial-section .text-slider {
+    height: 300px; /* Increased height for sliders in mobile view */
+    border: 2px solid #ccc; /* Add border */
+    box-sizing: border-box; /* Include padding and border in the total width and height */
+    display: flex; /* Use flexbox to align content vertically */
+    flex-direction: column; /* Align content vertically */
+  }
+
+  .testimonial-section .slide-image {
+    width: 100%; /* Fill the container width */
+    height: 100%; /* Fill the container height */
+    object-fit: cover; /* Ensure images cover the container */
+  }
+
+  .testimonial-section .slide {
+    flex: 1; /* Allow slide content to expand to fill available space */
+    display: flex; /* Use flexbox for slide content */
+    flex-direction: column; /* Align slide content vertically */
+    justify-content: center; /* Center slide content vertically */
+  }
+  
+  .testimonial-section .slide-title {
+    font-size: 20px; /* Decrease font size for smaller screens */
+  }
+
+  .testimonial-section .slide-desc {
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+}
+/* Sunny Section */
+.sunny {
+  position: relative;
+  overflow: hidden; /* Ensure the image does not overflow its container */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.sunny img {
+  width: 100%;
+  height: 100%;
+  display: block; /* Ensure image behaves properly inside the container */
+}
+
+.overlay-text1 {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: #fdfdfd;
+}
+
+.overlay-text1 h1 {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+  .overlay-text1 {
+    width: 80%; /* Adjust width for smaller screens */
+    top: auto; /* Reset top position */
+    bottom: 10%; /* Position text from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center align horizontally */
+    font-size: 2rem; /* Increase font size for smaller screens */
+  }
+
+  .overlay-text1 h1 {
+    font-size: 1.5rem; /* Decrease font size for smaller screens */
+    line-height: 1.3; /* Adjust line height for better readability */
+  }
+}
+/* Container 2 */
+.container2 {
+  width: 100%;
+  height: auto; /* Adjusted height */
+  margin-top: 50px;
+  padding: 20px; /* Added padding */
+}
+
+/* Image Box */
+.imgbox {
+  width: 100%; /* Adjusted width for responsiveness */
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto; /* Center the image box horizontally */
+  margin-top: 30px;
+  box-shadow: -30px 10px #DEF2EF; /* Added box shadow */
+}
+
+/* Text */
+.imgtxt {
+  margin-top: 30px; /* Adjusted margin-top */
+  max-width: 500px; /* Added max-width */
+}
+.heading {
+  margin-top: 10px; /* Adjusted margin-top */
+  max-width: 500px; /* Added max-width */
+ 
+}
+/* Button */
+.learn-btn {
+  width: 150px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+ /* margin-left: auto; /* Center the button horizontally */
+ /* margin-right: auto; /* Center the button horizontally */
+  display: block; /* Ensure button is displayed as block element */
+}
+/* Media Query for Mobile View */
+@media screen and (max-width: 767px) {
+  /* Centering <h1> for mobile view */
+  .heading {
+    margin-top: 10px; /* Adjusted margin-top for mobile view */
+    margin-bottom: 10px; /* Adjusted margin-bottom for mobile view */
+    text-align: center;
+  }
+
+  /* Centering button for mobile view */
+  .learn-btn {
+    margin-left: auto;
+    margin-right: auto; 
+    display: block; /* Ensure button is displayed as block element */
+  }
+}
+
+
+
+/*section 7*/
+.quote {
+  font-family: Monotype Corsiva;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.author {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #54EC23;
+  padding: 5px 10px;
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand mr-4" href="#">SANDEEPREDDY</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="main-carousel">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://antphotography.in/wp-content/uploads/2019/09/TIL03854.jpg" alt="First slide">
+        <div class="carousel-caption">
+          <h1>Photography for<br> Adventurous Souls & <br>Rebels At Heart</h1>
+          <a href="#">More Info</a>
+        </div>
+      </div>
+      <!-- Add more carousel items here -->
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://wallpapercave.com/wp/wp8585583.jpg" alt="Second slide">
+        <div class="carousel-caption">
+          <h1>Photography for<br> Adventurous Souls & <br>Rebels At Heart</h1>
+          <a href="#">More Info</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://d397bfy4gvgcdm.cloudfront.net/72071-04-Sangeet-3-orig.jpeg" alt="Third slide">
+        <div class="carousel-caption">
+          <h1>Photography for <br>Adventurous Souls & <br>Rebels At Heart</h1>
+          <a href="#">More Info</a>
+        </div>
+      </div>
+    </div>
+     <!-- Slider navigation buttons -->
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+
+</section>
+</section>
+  <!--photo gallery -->
+  <section>
+  <div class="container-fluid"> <!-- Use container-fluid to make the container full width -->
+    <h1 class="mt-5 mb-4 text-center">Photo Gallery</h1>
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+        <img src="https://media.weddingz.in/images/c89aa2620b709ba4418437bc4f67e702/14225576_1098152463566576_4208895363236883027_n.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water">
+        <img src="https://th.bing.com/th/id/OIP.QFzHeeMNpC9ufx2IvgOsbQHaLH?w=640&h=960&rs=1&pid=ImgDetMain" class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape">
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img src="https://www.thewedcafe.com/wp-content/uploads/2020/08/SABI7066.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds">
+        <img src="https://lh3.googleusercontent.com/eyyIEroBsLmd_bvrYsqJJLPQA-Dhk2QKEC4AE7plB8zOHslHa5NM6tpwRvMjoeNxOavT2V1uRtwN5rtvmzNIowuZ=w1500-h1000-l95-e31" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water">
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img src="https://cdn.sharechat.com/cutecoupleprofiledp_1e8cc75f_1593041975600_cmprsd_40.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea">
+        <img src="https://d3btuubl2bvm9d.cloudfront.net/images/f1ec3bc93b2811e3b6330e2f866a9102/1485597650078-web.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!--testimonial section-->
+
+  <section class="testimonial-section">
+     <div class="slider-container">
+    <!-- Text Slider -->
+    <div class="slider-half">
+      <div class="text-slider">
+        <div class="slide">
+          <h3 class="slide-title">John Doe</h3>
+          <p class="slide-desc">"I'm very satisfied with the service. It exceeded my expectations! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus mauris eget turpis vehicula, nec vestibulum risus ultrices. Morbi finibus consequat velit, eu pretium eros auctor nec. Proin non leo eu libero blandit suscipit. Sed gravida feugiat justo, at dictum enim consectetur at. Nulla facilisi. Integer tempor justo vel magna tristique, eget egestas nisi tincidunt. Sed et justo ut velit interdum iaculis."</p>
+        </div>
+        <div class="slide">
+          <h3 class="slide-title">Jane Smith</h3>
+          <p class="slide-desc">"Great experience overall. The team was professional and efficient. Fusce posuere lorem felis, at pulvinar magna bibendum ac. Morbi ultrices vestibulum commodo. Sed a semper sapien. Mauris faucibus id urna eget cursus. In hac habitasse platea dictumst. Cras semper luctus lorem, sed dignissim tortor pellentesque et. Aenean nec est ex. Nam vehicula, est ut convallis venenatis, odio purus facilisis nisi, eu accumsan quam magna sit amet risus. Donec tristique id quam non vehicula. Donec finibus tortor arcu, eget lacinia elit aliquet sed."</p>
+        </div>
+        <div class="slide">
+          <h3 class="slide-title">Michael Johnson</h3>
+          <p class="slide-desc">"Highly recommended! I will definitely use this service again. Cras eu lorem a eros blandit commodo. In hac habitasse platea dictumst. Pellentesque nec volutpat libero. Ut lobortis odio et leo facilisis, vitae molestie sapien lacinia. Phasellus tincidunt massa a ultrices sollicitudin. Duis vehicula est et facilisis pharetra. Integer tristique sollicitudin urna, nec molestie purus fringilla eget. Nullam euismod, dui quis dapibus convallis, odio quam dapibus felis, id rutrum metus purus ut nisi."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Slider -->
+    <div class="slider-half">
+      <div class="image-slider">
+        <div class="slide">
+          <img class="slide-image" src="https://rathinamstills.com/wp-content/gallery/streets-of-puducherry-3/002.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+          <img class="slide-image" src="https://th.bing.com/th/id/OIP.l6WSUsUmAopZ-eJhQ78f0AHaE8?w=960&h=640&rs=1&pid=ImgDetMain" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img class="slide-image" src="https://www.weddingsonline.in/blog/wp-content/uploads/2016/07/conscious.jpg" alt="Image 3">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">‹</button>
+        <button class="next" onclick="changeSlide(1)">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!--sunny-->
+<section>
+  <div class="sunny">
+    <img src="https://antphotography.in/wp-content/uploads/2019/08/DSC1897.jpg" class="w-100" alt="Testimonial Image">
+    <div class="overlay-text1">
+      <h1>Do it Your Way.<br>Elope in Your<br>Dream Location</h1>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5 -->
+<section>
+  <div class="container2">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+        <div class="imgbox">
+          <img src="https://i.pinimg.com/736x/b5/54/77/b5547774e32cb59eeb2b392b59d07f4e.jpg" width="400px" height="450px" alt="Photography">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+        <h1 class="heading">Welcome Friend,<br>My Name is<br>Vaneesa.</h1>
+        <p class="imgtxt">The word Photography literally means 'drawing with light', which derives from the Greek photo, meaning light and graph, meaning to draw. Photography is the process of recording an image – a photograph – on light-sensitive film or, in the case of digital photography, via a digital electronic or magnetic memory.</p>
+        <button class="learn-btn">Learn More..</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6 -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="pacific text-center">
+          <h4>Pacific NorthWest or Anywhere Beyond</h4>
+          <p>The word Photography literally means 'drawing with light', which derives from the Greek photo, meaning light and graph, meaning to draw. Photography is the process of recording an image - a photograph - on light-sensitive film or, in the case of digital photography, via a digital electronic or magnetic memory.</p>
+          <button class="btn btn-primary">See More..</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section 7 -->
+<div class="container1">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+      <p class="quote">"Do not follow where the path may lead. Go instead where there is no path and leave a trail."</p>
+      <p class="author">RALPH WALDO EMERSON</p>
+    </div>
+  </div>
+</div>
+
+
+<footer class="text-center text-white" style="background-color: #333;">
+  <div class="container p-4">
+    <!-- Social Media Section -->
+    <section class="mb-4">
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+    </section>
+
+     <!-- Form Section -->
+      <section>
+        <h5 class="text-uppercase text-light">Contact Us</h5>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </section>
+      <br>
+<section>
+    <!-- Copyright Section -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <p class="text-light">© 2024 Sandeep Reddy</p>
+    </div>
+  </div>
+</section>
+</footer>
+
+<script>
+    const textSlides = document.querySelectorAll('.text-slider .slide');
+    const imageSlides = document.querySelectorAll('.image-slider .slide');
+    let slideIndex = 0;
+
+    function showSlides() {
+      for (let i = 0; i < textSlides.length; i++) {
+        textSlides[i].style.display = "none";
+        imageSlides[i].style.display = "none";
+      }
+
+      textSlides[slideIndex].style.display = "block";
+      imageSlides[slideIndex].style.display = "block";
+    }
+
+    showSlides();
+
+    function changeSlide(direction) {
+      slideIndex += direction;
+      if (slideIndex < 0) {
+        slideIndex = textSlides.length - 1;
+      } else if (slideIndex >= textSlides.length) {
+        slideIndex = 0;
+      }
+      showSlides();
+    }
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
